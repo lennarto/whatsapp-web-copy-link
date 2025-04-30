@@ -13,17 +13,17 @@ function generateWhatsAppLink() {
 }
 
 // Function to copy text to clipboard
-function copyToClipboard(text) {
+function copyToClipboard(text, color = '#f5e3a1') {
     navigator.clipboard.writeText(text).then(function() {
-        showNotification('URL copied to clipboard!');
+        showNotification('URL copied to clipboard!', color);
     }, function(err) {
-        showNotification('Failed to copy URL');
+        showNotification('Failed to copy URL', '#f5e3a1');
         console.error('Could not copy text: ', err);
     });
 }
 
 // Function to show a custom notification that fades out
-function showNotification(message) {
+function showNotification(message, backgroundColor) {
     const existingNotification = document.querySelector('#wa-notification');
     if (existingNotification) {
         existingNotification.remove(); // Remove any existing notification before showing a new one
@@ -36,7 +36,7 @@ function showNotification(message) {
     notification.style.bottom = '20px';
     notification.style.left = '50%';
     notification.style.transform = 'translateX(-50%)';
-    notification.style.backgroundColor = '#f5e3a1'; // Match the pastel yellow color of the button
+    notification.style.backgroundColor = backgroundColor;
     notification.style.color = '#000'; // Black text for good contrast
     notification.style.padding = '10px 20px';
     notification.style.borderRadius = '8px'; // Round edges
@@ -61,45 +61,61 @@ function injectCopyButton() {
 
     const dataId = chatElement.getAttribute('data-id');
     if (dataId.includes('@g.us')) {
-        // Do not inject button for group chats
         return;
     }
 
     const header = document.querySelector('header[class^="x1n2onr6"]');
+    const existingButtonGroup = header?.querySelector('div[class*="x1ad89wd"]') || header?.lastElementChild;
 
-    // Check if the button is already present, avoid adding it multiple times
     if (header && !document.querySelector('#copy-url-btn')) {
-        const button = document.createElement('button');
-        
-        // Add icon next to "Copy URL" text
-        button.innerHTML = `
-            <img src="https://img.icons8.com/ios-filled/16/000000/link.png" alt="Link Icon" style="margin-right: 5px;">
-            Copy URL
-        `;
-        button.id = 'copy-url-btn';
-        button.style.backgroundColor = '#f5e3a1'; // Pastel yellow color
-        button.style.border = 'none';
-        button.style.borderRadius = '8px'; // Round edges for the button
-        button.style.padding = '10px';
-        button.style.cursor = 'pointer';
-        button.style.display = 'flex'; // Align icon and text
-        button.style.alignItems = 'center'; // Vertically center icon and text
-        button.style.marginRight = '10px'; // Move it to the left of existing buttons
-        button.style.marginLeft = 'auto'; // Align it to the left
+        const phoneNumber = (dataId.match(/(false|true)_(\d+)@c.us/) || [])[2];
 
-        // Add click event to copy the generated URL
-        button.addEventListener('click', () => {
-            const waLink = generateWhatsAppLink();
-            if (waLink) {
-                copyToClipboard(waLink);
-            } else {
-                showNotification('Could not generate the link');
-            }
+        if (!phoneNumber) return;
+
+        const buttonStyles = `
+            background-color: #f5e3a1;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        `;
+
+        // Create "Copy" button
+        const copyBtn = document.createElement('button');
+        copyBtn.id = 'copy-url-btn';
+        copyBtn.innerHTML = `🔗 Both urls`;
+        copyBtn.style.cssText = buttonStyles;
+        copyBtn.addEventListener('click', () => {
+            const waLink = `https://wa.me/${phoneNumber} / https://web.whatsapp.com/send?phone=${phoneNumber}`;
+            copyToClipboard(waLink, '#f5e3a1');
         });
 
-        // Find the existing button group and insert the new button before it
-        const existingButtonGroup = header.querySelector('div[class*="x1ad89wd"]') || header.lastElementChild;
-        header.insertBefore(button, existingButtonGroup);
+        // Create "Web" button
+        const webBtn = document.createElement('button');
+        webBtn.id = 'open-wa-web-btn';
+        webBtn.innerHTML = `💻 Web`;
+        webBtn.style.cssText = buttonStyles.replace('#f5e3a1', '#d4fdd4');
+        webBtn.addEventListener('click', () => {
+            const url = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+            copyToClipboard(url, '#d4fdd4');
+        });
+
+        // Create "API" button
+        const apiBtn = document.createElement('button');
+        apiBtn.id = 'open-wa-api-btn';
+        apiBtn.innerHTML = `📱 App`;
+        apiBtn.style.cssText = buttonStyles.replace('#f5e3a1', '#d1e7fd');
+        apiBtn.addEventListener('click', () => {
+            const url = `https://wa.me/${phoneNumber}`;
+            copyToClipboard(url, '#d1e7fd');
+        });
+
+        header.insertBefore(apiBtn, existingButtonGroup);
+        header.insertBefore(webBtn, apiBtn);
+        header.insertBefore(copyBtn, webBtn);
     }
 }
 

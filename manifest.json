@@ -1,20 +1,19 @@
 {
-    "manifest_version": 3,
-    "name": "WhatsApp Copy URL",
-    "version": "1.0",
-    "description": "Copy WhatsApp chat URL to clipboard",
-    "permissions": ["clipboardWrite", "activeTab", "scripting"],
-    "host_permissions": [
-      "https://web.whatsapp.com/*"
-    ],
-    "content_scripts": [
-      {
-        "matches": ["https://web.whatsapp.com/*"],
-        "js": ["contentScript.js"]
-      }
-    ],
-    "action": {
-      "default_popup": "popup.html"
+  "manifest_version": 3,
+  "name": "WhatsApp URL Tools",
+  "version": "1.0",
+  "description": "Adds buttons to WhatsApp Web for copying direct chat URLs",
+  "permissions": ["activeTab", "scripting", "clipboardWrite"],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["contentScript.js"]
     }
-  }
-  
+  ]
+}

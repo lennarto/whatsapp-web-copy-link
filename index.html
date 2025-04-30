@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Link Generator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    input, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .links {
+      margin-top: 2rem;
+    }
+    .links a {
+      display: block;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      color: blue;
+    }
+    #form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #phone-display {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>WhatsApp Link Generator</h1>
+
+  <div id="form-container">
+    <input type="text" id="phone" placeholder="Enter phone number (e.g. 491234567890)" />
+    <button onclick="handleGenerate()">Generate Links</button>
+  </div>
+
+  <div id="phone-display"></div>
+
+  <div class="links" id="output"></div>
+
+  <script>
+    function generateLinks(number) {
+      const waWeb = `https://web.whatsapp.com/send?phone=${number}`;
+      const waApi = `https://api.whatsapp.com/send?phone=${number}`;
+
+      document.getElementById('phone-display').textContent = `Phone Number: ${number}`;
+      document.getElementById('output').innerHTML = `
+        <a href="${waWeb}" target="_blank">Open in WhatsApp Web</a>
+        <a href="${waApi}" target="_blank">Open in WhatsApp API</a>
+      `;
+    }
+
+    function handleGenerate() {
+      const rawInput = document.getElementById('phone').value;
+      const number = rawInput.replace(/\D/g, '');
+      if (!number) {
+        alert("Please enter a valid phone number.");
+        return;
+      }
+
+      // Update the URL without reloading
+      const newUrl = `${window.location.pathname}?phone=${number}`;
+      window.history.pushState({path: newUrl}, '', newUrl);
+
+      // Hide form and show phone + links
+      document.getElementById('form-container').style.display = 'none';
+      generateLinks(number);
+    }
+
+    window.addEventListener('load', () => {
+      const params = new URLSearchParams(window.location.search);
+      const phone = params.get('phone');
+      if (phone) {
+        // Hide the form if phone is provided
+        document.getElementById('form-container').style.display = 'none';
+        generateLinks(phone.replace(/\D/g, ''));
+      }
+    });
+  </script>
+</body>
+</html>
