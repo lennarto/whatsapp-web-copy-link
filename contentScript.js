@@ -76,7 +76,7 @@ function injectCopyButton() {
             background-color: #f5e3a1;
             border: none;
             border-radius: 8px;
-            padding: 5px 10px;
+            padding: 2px 10px 4px 10px;
             cursor: pointer;
             display: flex;
             align-items: center;

@@ -1,3 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Popup</title>
+  <style>
+    body {
+      background-color: #2e2e2e;
+      color: #f0f0f0;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #logo {
+      max-width: 100px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    #donation-text {
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    #author-link {
+      color: #a8c0ff;
+      text-decoration: none;
+    }
+
+    #author-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="popup-container">
+    <img src="images/favicon.svg" alt="Logo" id="logo">
+    <p id="donation-text">I'd be super happy if you donated me a beer 🍺 or something!</p>
+    <a id="author-link" href="https://lennie.de" target="_blank">Visit the author</a>
+  </div>
+
+<script>
 function injectCopyButton() {
     const chatElement = document.querySelector('[data-id]');
     if (!chatElement) return;
@@ -100,3 +145,6 @@ function showNotification(message, backgroundColor) {
         setTimeout(() => notification.remove(), 500);
     }, 3000);
 }
+</script>
+</body>
+</html>
