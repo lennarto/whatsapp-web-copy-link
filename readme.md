@@ -19,9 +19,10 @@ them and clean up your Whatsapp inbox.
 todo
 
 ## 🔥 Usage 
+(Both App and Web work on iOS and Macbook. Not tested on Widnows or Android yet)
 
 If a whatsapp number is "+491759928165", then the following urls will be copied:
-- 📱 App: https://wa.me/491759928165
+- 📱 App: https://wa.me/491759928165 
 - 💻 Web: https://web.whatsapp.com/send?phone=491759928165
 
 Because sometines you don't know what you will need / use in the feature - therefore I added a button "🔗 Both" so you can save both urls in your notes app.
