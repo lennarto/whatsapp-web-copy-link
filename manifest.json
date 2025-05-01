@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "WhatsApp URL Tools",
+  "name": "WhatsApp Web copy URL",
   "version": "1.0",
-  "description": "Adds buttons to WhatsApp Web for copying direct chat URLs",
+  "description": "Chrome addon, that lets you copy and paste WhatsApp Web URLs to specific chats, so you can snooze them and clean up your Whatsapp inbox.",
   "permissions": ["activeTab", "scripting", "clipboardWrite"],
   "host_permissions": [
     "https://web.whatsapp.com/*"

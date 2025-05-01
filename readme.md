@@ -19,7 +19,7 @@ them and clean up your Whatsapp inbox.
 todo
 
 ## 🔥 Usage 
-(Both App and Web work on iOS and Macbook. Not tested on Widnows or Android yet)
+*(Both App and Web work on iOS and Macbook. Not tested on Windows or Android yet).*
 
 If a whatsapp number is "+491759928165", then the following urls will be copied:
 - 📱 App: https://wa.me/491759928165 
