@@ -19,7 +19,8 @@ them and clean up your Whatsapp inbox.
 todo
 
 ## 🔥 Usage 
-*(Both App and Web work on iOS and Macbook. Not tested on Windows or Android yet).*
+
+This addon will create 3 buttons in the whatsapp web app.
 
 If a whatsapp number is "+491759928165", then the following urls will be copied:
 - 📱 App: https://wa.me/491759928165 
@@ -29,6 +30,7 @@ Because sometines you don't know what you will need / use in the feature - there
 - 🔗 Both urls will create a text: 
      "https://wa.me/491759928165 / https://web.whatsapp.com/send?phone=491759928165"
 
+*(Both App and Web work on iOS and Macbook. Not tested on Windows or Android yet).*
 
 
 ## 🤝  Found a bug? Missing a specific feature?
