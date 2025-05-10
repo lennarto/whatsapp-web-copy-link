@@ -16,7 +16,10 @@ them and clean up your Whatsapp inbox.
 <img src="images/demo.png" alt="Usage demo">
 
 ## 🚀 Installation 
-todo
+
+<a href="https://chromewebstore.google.com/detail/whatsapp-web-copy-url/aclcelbdcmiklepkkgccaldkmehkmjdn">
+  <img src="images/chrome_web_store.png" alt="Install from Chrome Web Store" width="260"/>
+</a>
 
 ## 🔥 Usage 
 
