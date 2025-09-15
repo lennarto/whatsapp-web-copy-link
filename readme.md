@@ -21,7 +21,10 @@ them and clean up your Whatsapp inbox.
   <img src="images/chrome_web_store.png" alt="Install from Chrome Web Store" width="210"/>
 </a>
 
-- Option 1: Install directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/whatsapp-web-copy-url/aclcelbdcmiklepkkgccaldkmehkmjdn)
+- Option 1: Install directly from the <a href="https://chromewebstore.google.com/detail/whatsapp-web-copy-url/aclcelbdcmiklepkkgccaldkmehkmjdn" target="_blank" rel="noopener noreferrer">
+  Chrome Web Store
+</a>
+
 - Option 2: Download this repository and load it as an unpacked extension in Chrome.
 
 ## 🔥 Usage 
