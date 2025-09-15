@@ -18,8 +18,11 @@ them and clean up your Whatsapp inbox.
 ## 🚀 Installation 
 
 <a href="https://chromewebstore.google.com/detail/whatsapp-web-copy-url/aclcelbdcmiklepkkgccaldkmehkmjdn">
-  <img src="images/chrome_web_store.png" alt="Install from Chrome Web Store" width="260"/>
+  <img src="images/chrome_web_store.png" alt="Install from Chrome Web Store" width="210"/>
 </a>
+
+- Option 1: Install directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/whatsapp-web-copy-url/aclcelbdcmiklepkkgccaldkmehkmjdn)
+- Option 2: Download this repository and load it as an unpacked extension in Chrome.
 
 ## 🔥 Usage 
 
@@ -49,6 +52,7 @@ I love building digital products, working in it-strategy, or applying ai in real
 ##### 🍻 Buy me a beer 
 
 If you’ve found something useful, feel free to fuel my next project with a Beer! 🍻 I do have a couple of cool ideas in my backlog 🚀
+👉 [My Paypal](https://www.paypal.com/paypalme/ltoertzen) 👈
 
 ## 📙 License
 "reopen-existing-tab" is released under the terms of the [MIT License](LICENSE).
