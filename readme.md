@@ -39,17 +39,17 @@ Because sometines you don't know what you will need / use in the feature - there
 *(Both App and Web work on iOS and Macbook. Not tested on Windows or Android yet).*
 
 
-## 🤝  Found a bug? Missing a specific feature?
+## 💙 Support 
+
+#### 🤝  Found a bug? Missing a specific feature?
 Feel free to file a new <a href="https://github.com/lennarto/whatsapp-web-copy-link/issues" target="_blank">Issue</a>.
 
-
-## 💙 Support 
-##### 🤝 Contact me
+#### 🤝 Contact me
 I love building digital products, working in it-strategy, or applying ai in real-world use cases. On top of that, i create private it expert reports (🇩🇪 IT-Gutachten) for legal proceedings in germany, especially in criminal cases.
 👉 [My website](https://lennie.de) 👈
 
 
-##### 🍻 Buy me a beer 
+#### 🍻 Buy me a beer 
 
 If you’ve found something useful, feel free to fuel my next project with a Beer! 🍻 I do have a couple of cool ideas in my backlog 🚀
 👉 [My Paypal](https://www.paypal.com/paypalme/ltoertzen) 👈
