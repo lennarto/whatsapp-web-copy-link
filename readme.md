@@ -41,7 +41,7 @@ Because sometines you don't know what you will need / use in the feature - there
 
 ## 💙 Support 
 
-#### 🤝  Found a bug? Missing a specific feature?
+#### 🐞  Found a bug? Missing a specific feature?
 Feel free to file a new <a href="https://github.com/lennarto/whatsapp-web-copy-link/issues" target="_blank">Issue</a>.
 
 #### 🤝 Contact me
